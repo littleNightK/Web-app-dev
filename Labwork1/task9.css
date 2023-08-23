@@ -1,0 +1,27 @@
+    /* Change table cells size */
+    .largecell {
+        width: 250px;
+        height: 40px;
+        text-align: center;
+    }
+    .mediumcell {
+        width: 150px;
+        height: 40px;
+        text-align: center;
+    }
+
+    /* Change cells background color */
+    .graybackground {
+        background-color: #e9edf4;
+    }
+    .lightbluebackground {
+        background-color: #d0d8e8;
+    }
+    .bluebackground {
+        background-color: #1f497d;
+    }
+        
+    /* Change background color on hover */
+    tr:hover {
+        background-color: lightgray;
+    }
