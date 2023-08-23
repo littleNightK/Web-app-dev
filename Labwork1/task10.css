@@ -1,0 +1,52 @@
+body {
+    margin: 2px;
+    background-color: #204c8c;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    background-color: #4472c4;
+    color: white;
+    height: 15%;
+    text-align: center;
+}
+
+/* Horizontal Margin */
+.horizontal-margin {
+    background-color: #204c8c;
+    height: 0.5%;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #dbdbdb;
+    float: left;
+    width: 29.7%;
+    height: 76.5%;
+}
+
+/* Vertical Margin */
+.vertical-margin {
+    background-color: #204c8c;
+    width: 0.3%;
+    height: 77%;
+    float: left;
+}
+
+/* Content Area */
+.content {
+    background-color: #c5e0b4;
+    float: right;
+    width: 70%;
+    height: 76.5%;
+}
+
+/* Footer */
+.footer {
+    clear: both;
+    background-color: #4472c4;
+    color: white;
+    text-align: center;
+    height: 7.5%;
+}
