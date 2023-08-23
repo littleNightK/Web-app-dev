@@ -1,0 +1,119 @@
+    body {
+        margin: 20px;
+        background-color: #4682A9;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Banner */
+    .banner {
+        background-color: #91C8E4;
+        color: #0C356A;
+        height: 13%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Horizontal Margin */ 
+    .horizontal-margin {
+        background-color: #4682A9;
+        height: 3%;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        background-color: #F6F4EB;
+        float: left;
+        width: 23.5%;
+        height: 75%;
+    }
+
+    /* Sidebar menu box */
+    .sidebar-menu-box {
+        margin-top: 60px;
+    }
+
+    /* Sidebar category box */
+    .sidebar-box {
+        background-color: #749BC2;
+        padding: 1px;
+        margin: 2px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Vertical Margin */
+    .vertical-margin {
+        background-color: #4682A9;
+        width: 1.5%;
+        height: 78%;
+        float: left;
+    }
+
+    /* Content Area */
+    .content {
+        background-color: #F6F4EB;
+        float: right;
+        width: 75%;
+        height: 75%;
+    }
+
+    /* Thumbnail grid */
+    .thumbnail-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 5px;
+        margin: 50px;
+
+    }
+
+    /* White margin */
+    .white-margin {
+        background-color: #4682A9;
+        padding: 1px;
+        margin: 30px;
+    }
+
+    /* Thumbnail White margin */
+    .thumbnail-white-margin {
+        background-color: #4682A9;
+        padding: 3px;
+        margin: 10px;
+        width: 265px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .thumbnail-white-margin img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* Footer */
+    .footer {
+        clear: both;
+        background-color: #91C8E4;
+        color: #0C356A;
+        height: 7.5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*remove underline from links*/
+    a:link, a:visited {
+        text-decoration: none;
+        font-weight: bold;
+        color: #0C356A;
+        }
+    
+    /*change color of links on hover*/
+    a:hover {
+        color: #4682A9;
+    }

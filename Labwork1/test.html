@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 11 - Modified (No JavaScript)</title>
+    <style>
+        /* Your existing styles */
+        /* ... */
+
+        /* Additional styles for modifications */
+        /* ... */
+
+        /* Styling for the popup overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .popup-content {
+            position: relative;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="task11.css">
+</head>
+<body>
+    <div class="banner">
+        <h1>Banner</h1>
+    </div>
+
+    <div class="horizontal-margin"> </div>
+
+    <div class="sidebar">
+        <div class="sidebar-menu-box">
+            <!-- Add links to different categories here -->
+            <div class="white-margin">
+                <div class="sidebar-box">
+                    <a href="#category1">Category 1</a>
+                </div>
+            </div>
+            <div class="white-margin">
+                <div class="sidebar-box">
+                    <a href="#category2">Category 2</a>
+                </div>
+            </div>
+            <div class="white-margin">
+                <div class="sidebar-box">
+                    <a href="#category3">Category 3</a>
+                </div>
+            </div>
+            <div class="white-margin">
+                <div class="sidebar-box">
+                    <a href="#about">About</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="vertical-margin"> </div>
+
+    <div class="content">
+        <!-- Thumbnails will be dynamically populated based on the selected category -->
+        <div class="thumbnail-grid" id="category1">
+            <!-- Thumbnails for Category 1 -->
+            <!-- For demonstration, use images with anchor tags linking to full-size images -->
+            <a href="images/artemis logo.jpg">
+                <div class="thumbnail-white-margin">
+                    <div class="thumbnail-box">
+                        <img src="images/artemis logo.jpg" alt="Thumbnail 1">
+                    </div>
+                </div>
+            </a>
+            <!-- Repeat similar structure for other thumbnails -->
+        </div>
+        <!-- Repeat similar structure for other categories -->
+        <div class="thumbnail-grid" id="category2">
+            <!-- Thumbnails for Category 2 -->
+            <a href="images/mountain-painting.jpg">
+                <div class="thumbnail-white-margin">
+                    <div class="thumbnail-box">
+                        <img src="images/mountain-painting.jpg" alt="Thumbnail 2">
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="thumbnail-grid" id="category3">
+            <!-- Thumbnails for Category 3 -->
+        </div>
+        <div class="thumbnail-grid" id="about">
+            <div class="thumbnail-white-margin">
+                <div class="thumbnail-box">
+                    <p>About Thumbnail</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright</p>
+    </div>
+</body>
+</html>
