@@ -79,10 +79,10 @@
     /* Thumbnail White margin */
     .thumbnail-white-margin {
         background-color: #4682A9;
-        padding: 3px;
-        margin: 10px;
-        width: 265px;
-        height: 150px;
+        padding: 2%;
+        margin: 1%;
+        width: 90%;
+        height: 90%;
         display: flex;
         align-items: center;
         justify-content: center;
