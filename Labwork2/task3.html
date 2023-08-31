@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Task 3</title>
+    </head>
+    <body>
+        <h1>Odd and Even Numbers</h1>
+        
+        <script>
+            for (var i = 1; i <= 15; i++) {
+                var iteration = i + (i % 2 === 0 ? " is even" : " is odd");
+                var paragraph = document.createElement("p");
+                paragraph.textContent = iteration;
+                document.body.appendChild(paragraph);
+            }
+        </script>
+    </body>
+</html>

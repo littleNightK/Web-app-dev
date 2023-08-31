@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Task 1</title>
+    <style>
+        .result-box {
+            border: 1px #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function Fahrenheit_calculator() {
+            var FahrenheitInput = document.getElementById("fahrenheitInput");
+            var CelsiusResult = document.getElementById("celsiusResult");
+            
+            var Fahrenheit = FahrenheitInput.value;
+            var Celsius = ((Fahrenheit - 32) * 5) / 9;
+            
+            CelsiusResult.textContent = Fahrenheit + " Fahrenheit is " + Celsius + " Celsius";
+        }
+
+        function Celsius_calculator() {
+            var CelsiusInput = document.getElementById("celsiusInput");
+            var FahrenheitResult = document.getElementById("fahrenheitResult");
+            
+            var Celsius = CelsiusInput.value;
+            var Fahrenheit = (9/5) * Celsius + 32;
+            
+            FahrenheitResult.textContent = Celsius + " Celsius is " + Fahrenheit + " Fahrenheit";
+        }
+    </script>
+</head>
+<body>
+    <h1>Celsius and Fahrenheit converter</h1>
+    <p>Choose to convert from Fahrenheit or Celsius</p>
+    
+    <label for="fahrenheitInput">Enter Fahrenheit value: </label>
+    <input type="number" id="fahrenheitInput">
+    <button type="button" onclick="Fahrenheit_calculator()">Convert</button>
+    <div class="result-box" id="celsiusResult"></div>
+    
+    <label for="celsiusInput">Enter Celsius value: </label>
+    <input type="number" id="celsiusInput">
+    <button type="button" onclick="Celsius_calculator()">Convert</button>
+    <div class="result-box" id="fahrenheitResult"></div>
+</body>
+</html>

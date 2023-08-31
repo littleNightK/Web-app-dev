@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Task 1</title>
+        <script>
+            function Fahrenheit_calculator() {
+                var Fahrenheit = prompt("Enter Fahrenheit value");
+                var Celsius = ((Fahrenheit - 32) * 5) / 9;
+                alert(Fahrenheit + " Fahrenheit is " + Celsius + " Celsius");
+            }
+            function Celsius_calculator() {
+                var Celsius = prompt("Enter Celsius value");
+                var Fahrenheit = (9/5) * Celsius + 32;
+                alert(Celsius + " Celsius is " + Fahrenheit + " Fahrenheit");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Celsius and Fahrenheit converter</h1>
+        <p>Choose to convert from fahrenheit or celcius</p>
+        <p id="demo"></p>
+        <button type="button" onclick="Fahrenheit_calculator()">Fahrenheit</button>
+        <button type="button" onclick="Celsius_calculator()">Celsius</button>
+    </body>
+</html>
