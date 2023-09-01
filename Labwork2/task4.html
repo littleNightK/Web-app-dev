@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Task4</title>
+    <style>
+        .signup-box {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .inputbox {
+            display: grid;
+            grid-template-columns: 130px 130px;
+            align-items: center;
+            margin: 4px;
+        }
+        .buttonbox {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            margin-top: 4px;
+            margin-left: 115px;
+        }
+    </style>
+    <script>
+        function checkPasswords() {
+            var password = document.getElementById("Password").value;
+            var retypePassword = document.getElementById("Re_type_password").value;
+            
+            if (password === retypePassword) {
+                alert("Passwords match!");
+            } else {
+                alert("Passwords do not match.");
+            }
+        }
+        function Reset() {
+            document.getElementById("Username").value = "";
+            document.getElementById("Password").value = "";
+            document.getElementById("Re_type_password").value = "";
+        }
+    </script>
+</head>
+<body>
+    <div class="signup-box">
+        <h1>Sign Up</h1>
+        <div class="inputbox">
+            <label for="Username">Username:</label>
+            <input type="text" id="Username">
+        </div>
+        <div class="inputbox">
+            <label for="Password">Password:</label>
+            <input type="password" id="Password">
+        </div>
+        <div class="inputbox">
+            <label for="Re_type_password">Re-type Password:</label>
+            <input type="password" id="Re_type_password">
+        </div>
+        <div class="buttonbox">
+            <button type="button" onclick="Reset()">Reset</button>
+            <button type="button" onclick="checkPasswords()">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
