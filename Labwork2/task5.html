@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Task5</title>
+    <style>
+        .main-box {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .inputbox {
+            display: grid;
+            grid-template-columns: 100px 140px;
+            grid-template-rows: 4px;
+            margin: 4px 0;
+            align-items: center;
+            font-size: 18px;
+        }
+        .buttonbox {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            margin-top: -8px;
+        }
+        .result-box {
+            border: 1px #ccc;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        label, button {
+            font-size: 14px; 
+        }
+    </style>
+    <script>
+        function Multiply() {
+            var num1 = document.forms["signup"]["1st Number"].value;
+            var num2 = document.forms["signup"]["2nd Number"].value;
+            var result = num1 * num2;
+            // Get a reference to the result span
+            var resultSpan = document.getElementById("result-span");
+            // Update the content of the result span
+            resultSpan.textContent = result;
+        }
+        function Divide() {
+            var num1 = document.forms["signup"]["1st Number"].value;
+            var num2 = document.forms["signup"]["2nd Number"].value;
+
+            if (num2 === 0) {
+                alert("Cannot divide by zero.");
+                return;
+            }
+
+            var result = num1 / num2;
+            // Get a reference to the result span
+            var resultSpan = document.getElementById("result-span");
+            // Update the content of the result span
+            resultSpan.textContent = result;
+        }
+    </script>
+</head>
+<body>
+    <div class="main-box">
+        <h3>Multiply and Divide two numbers:</h3>
+        <form name="signup">
+            <div class="inputbox">
+                1st Number: <input type="number" name="1st Number"> <br>
+            </div>
+            <div class="inputbox">
+                2nd Number: <input type="number" name="2nd Number"> <br>
+            </div>
+            <div class="buttonbox">
+                <button type="button" onclick="Multiply()">Multiply</button>
+                <button type="button" onclick="Divide()">Divide</button>
+            </div>
+            <div class="result-box">The Result is: <span id="result-span"></span></div>
+        </form>
+    </div>
+</body>
+</html>
