@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Task 8</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<form>
+    <input id="field1" type="text" value="Field 1">
+    <input id="field2" type="text" value="Field 2">
+</form>
+
+<script>
+    // Wait for the document to be ready
+    $(document).ready(function() {
+        // Attach a function to the blur event of Field1
+        $("#field1").on("blur", function() {
+            // Your function logic here
+            alert("Field1 lost focus!");
+        });
+    });
+</script>
+
+</body>
+</html>

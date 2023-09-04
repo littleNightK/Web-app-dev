@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 8</title>
+    <style>
+        /* Style for the box */
+        #info-box {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<form>
+    <input id="field1" type="text" value="Field 1">
+    <input id="field2" type="text" value="Field 2">
+</form>
+
+<!-- The info box -->
+<div id="info-box">This is some additional information.</div>
+
+<script>
+    $(document).ready(function() {
+        // When Field1 gains focus, show the info box
+        $("#field1").on("focus", function() {
+            $("#info-box").show();
+        });
+
+        // When Field1 loses focus, hide the info box
+        $("#field1").on("blur", function() {
+            $("#info-box").hide();
+        });
+    });
+</script>
+
+</body>
+</html>

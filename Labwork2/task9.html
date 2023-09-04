@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Task 9</title>
+</head>
+<body>
+    <h1>Heading1</h1>
+    <h2>Heading2</h2>
+    <p id="clickable-paragraph">Paragraph</p>
+    <button>Button</button>
+    <div id="log"></div>
+
+    <script>
+        // Get references to the paragraph and log elements
+        const paragraph = document.getElementById("clickable-paragraph");
+        const log = document.getElementById("log");
+
+        let clickCount = 0;
+        let firstClickTimestamp = 0;
+
+        // Add a click event listener to the paragraph
+        paragraph.addEventListener("click", function() {
+            clickCount++;
+            if (clickCount === 1) {
+                firstClickTimestamp = Date.now();
+                log.innerText = "First click recorded. Click again to measure the time.";
+            } else if (clickCount === 2) {
+                const secondClickTimestamp = Date.now();
+                const timeDifference = secondClickTimestamp - firstClickTimestamp;
+                log.innerText = `Milliseconds between clicks: ${timeDifference} ms`;
+                clickCount = 0; // Reset the click count for future measurements
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Task 7</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<a href="http://www.usth.edu.vn/" id="usth">USTH Website Vietnamese</a>
+
+<script>
+    // Wait for the document to be ready
+    $(document).ready(function() {
+        // Select the link with id "usth"
+        var usthLink = $("#usth");
+
+        // Change the hyperlink (href)
+        usthLink.attr("href", "https://usth.edu.vn/en/");
+
+        // Change the text content
+        usthLink.text("USTH Website English");
+    });
+</script>
+
+</body>
+</html>
