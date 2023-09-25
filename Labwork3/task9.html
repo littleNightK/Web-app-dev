@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 9</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1, h2 {
+            font-weight: normal;
+        }
+        h1 {
+            font-size: 1.5em;
+        }
+        h2 {
+            font-size: 1.2em;
+        }
+        input {
+            width: 200px;
+            height: 30px;
+            font-size: 1em;
+            padding: 5px;
+            margin: 5px;
+        }
+        button {
+            width: 200px;
+            height: 30px;
+            font-size: 1em;
+            padding: 5px;
+            margin: 5px;
+        }
+        #userList, #userProfile, #userPosts, #postList, #postComments {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dummy API Frontend</h1>
+
+    <h2>Users</h2>
+    <button onclick="listUsers()">List Users</button>
+    <div id="userList"></div>
+
+    <h2>User Details</h2>
+    <input type="text" id="userId" placeholder="User ID">
+    <button onclick="getUserProfile()">Get User Profile</button>
+    <div id="userProfile"></div>
+
+    <h2>User Posts</h2>
+    <input type="text" id="userPostsId" placeholder="User ID">
+    <button onclick="listUserPosts()">List User Posts</button>
+    <div id="userPosts"></div>
+
+    <h2>Posts</h2>
+    <button onclick="listPosts()">List Posts</button>
+    <div id="postList"></div>
+
+    <h2>Post Comments</h2>
+    <input type="text" id="postId" placeholder="Post ID">
+    <button onclick="listPostComments()">List Post Comments</button>
+    <div id="postComments"></div>
+
+    <script>
+        // JavaScript code to fetch and display data from the Dummy API
+        const API_KEY = '651187774f4b64d2afcf6dd6'; // Replace with your actual API key from Dummy API
+
+        async function fetchData(url) {
+            const response = await fetch(url, {
+                headers: {
+                    'app-id': API_KEY
+                }
+            });
+            return await response.json();
+        }
+
+        async function listUsers() {
+            const users = await fetchData('https://dummyapi.io/data/v1/user?limit=10');
+            const userList = document.getElementById('userList');
+            userList.innerHTML = '<table border="1"><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Picture</th></tr>' + users.data.map(user => `<tr><td>${user.id}</td><td>${user.firstName}</td><td>${user.lastName}</td><td><img src="${user.picture}" width="100" height="100"></td></tr>`).join('') + '</table>';
+        }
+
+        async function getUserProfile() {
+            const userId = document.getElementById('userId').value;
+            const user = await fetchData(`https://dummyapi.io/data/v1/user/${userId}`);
+            const userProfile = document.getElementById('userProfile');
+            userProfile.innerHTML = `<pre>${JSON.stringify(user, null, 2)}</pre>`;
+        }
+
+        async function listUserPosts() {
+            const userId = document.getElementById('userPostsId').value;
+            const posts = await fetchData(`https://dummyapi.io/data/v1/user/${userId}/post`);
+            const userPosts = document.getElementById('userPosts');
+            userPosts.innerHTML = '<ul>' + posts.data.map(post => `<li>ID: ${post.id}, Text: ${post.text}</li>`).join('') + '</ul>';
+        }
+
+        async function listPosts() {
+            const posts = await fetchData('https://dummyapi.io/data/v1/post');
+            const postList = document.getElementById('postList');
+            postList.innerHTML = '<ul>' + posts.data.map(post => `<li>ID: ${post.id}, Text: ${post.text}</li>`).join('') + '</ul>';
+        }
+
+        async function listPostComments() {
+            const postId = document.getElementById('postId').value;
+            const comments = await fetchData(`https://dummyapi.io/data/v1/post/${postId}/comment`);
+            const postComments = document.getElementById('postComments');
+            postComments.innerHTML = '<ul>' + comments.data.map(comment => `<li>${comment.message}</li>`).join('') + '</ul>';
+        }
+    </script>
+</body>
+</html>
