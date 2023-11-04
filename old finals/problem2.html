@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>Confusion Matrix Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .container h2 {
+            text-align: center;
+        }
+        
+        .container form {
+            display: grid;
+            gap: 10px;
+        }
+        
+        .container label {
+            font-weight: bold;
+        }
+        
+        .container input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        .container .button-container {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 15px ;
+        }
+        
+        .container button {
+            flex: 1;
+            /* To evenly distribute space */
+            padding: 10px;
+            background-color: black;
+            /* Adjusted color for visibility */
+            color: #fff;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+        
+        .container button:first-child {
+            margin-right: 5px;
+            /* Add space between buttons */
+        }
+        
+        .container button:hover {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="matrixForm" action="metrics.php" method="POST">
+    <div class="container">
+        <h2>Confusion Matrix Input</h2>
+            <div>
+                <label for="truePositive">True Positive:</label>
+                <input type="number" id="truePositive" name="truePositive" min="0" required>
+            </div>
+            <div>
+                <label for="falseNegative">False Negative:</label>
+                <input type="number" id="falseNegative" name="falseNegative" min="0" required>
+            </div>
+            <div>
+                <label for="falsePositive">False Positive:</label>
+                <input type="number" id="falsePositive" name="falsePositive" min="0" required>
+            </div>
+            <div>
+                <label for="trueNegative">True Negative:</label>
+                <input type="number" id="trueNegative" name="trueNegative" min="0" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" name="submit" onclick="Submitbutton()" >Submit</button>
+                <button type="submit" name="display" onclick="Displaybutton()" >Display</button>
+            </div>
+        
+    </div>
+    </form>
+    <script>
+        function Submitbutton() {
+            const truePositive = parseInt(document.getElementById("truePositive").value);
+            const falseNegative = parseInt(document.getElementById("falseNegative").value);
+            const falsePositive = parseInt(document.getElementById("falsePositive").value);
+            const trueNegative = parseInt(document.getElementById("trueNegative").value);
+
+            // Check for non-negative numbers
+            if (truePositive >= 0 && falseNegative >= 0 && falsePositive >= 0 && trueNegative >= 0) {
+                // Values are valid
+                alert("Values are valid");
+                document.getElementById("matrixForm").submit();
+            } else {
+                alert("Please enter non-negative values for all fields.");
+            }
+
+            
+        }
+
+
+
+        function Displaybutton() {
+            const truePositive = parseInt(document.getElementById("truePositive").value);
+            const falseNegative = parseInt(document.getElementById("falseNegative").value);
+            const falsePositive = parseInt(document.getElementById("falsePositive").value);
+            const trueNegative = parseInt(document.getElementById("trueNegative").value);
+
+            // Check for non-negative numbers
+            if (truePositive >= 0 && falseNegative >= 0 && falsePositive >= 0 && trueNegative >= 0) {
+                // Values are valid
+                alert("Values are valid");
+               
+                document.getElementById("matrixForm").submit();
+            } else {
+                alert("Please enter non-negative values for all fields.");
+            }
+        }
+
+       
+
+    </script>
+</body>
+
+</html>

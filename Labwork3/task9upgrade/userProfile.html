@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <div id="userProfile"></div>
+    <h2>User Posts</h2>
+    <div id="userPosts"></div>
+    
+    <script>
+        // JavaScript code to fetch and display user profile
+        const API_KEY = '651187774f4b64d2afcf6dd6'; // Replace with your actual API key from Dummy API
+        const userId = new URLSearchParams(window.location.search).get('id');
+
+        async function fetchData(url) {
+            const response = await fetch(url, {
+                headers: {
+                    'app-id': API_KEY
+                }
+            });
+            return await response.json();
+        }
+
+        async function getUserProfile() {
+            const user = await fetchData(`https://dummyapi.io/data/v1/user/${userId}`);
+            const userProfile = document.getElementById('userProfile');
+            userProfile.innerHTML = `<pre>${JSON.stringify(user, null, 2)}</pre>`;
+        }
+
+        async function listUserPosts() {
+            const posts = await fetchData(`https://dummyapi.io/data/v1/user/${userId}/post`);
+            const userPosts = document.getElementById('userPosts');
+            userPosts.innerHTML = posts.data.map(post => `
+                <div>
+                    <p>ID: ${post.id}</p>
+                    <p>Text: ${post.text}</p>
+                    <button onclick="openCommentsPopup('${post.id}')">View Comments</button>
+                </div>
+            `).join('');
+        }
+
+
+        // Automatically call getUserProfile() when the page loads
+        window.onload = async () => {
+            await getUserProfile();
+            await listUserPosts();
+        };
+
+    </script>
+</body>
+</html>
